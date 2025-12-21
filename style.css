@@ -1,0 +1,37 @@
+.button-click
+{
+    background-color: coral;
+    color: rgb(36, 7, 63);
+}
+.button-reset {
+    background-color: blueviolet;
+    color: white;
+}
+.butimage {
+    display: none;
+}
+
+/* Сброс стилей кнопки */
+#butimage,
+#butimage-2,
+#butimage-3,
+#butimage-4 {
+    visibility: hidden;
+    opacity: 0;
+    /* Полное удаление стилей кнопки */
+    all: unset; /* сбрасывает все наследуемые стили */ 
+    cursor: default; /* убираем указатель курсора */
+    display: inline-block; /* для правильного отображения изображения */
+
+}
+
+.form-container {
+    display: flex;
+    gap: 0px;
+    padding: 0px;
+}
+
+.left-forms,
+.right-forms {
+    flex: 1;
+}
