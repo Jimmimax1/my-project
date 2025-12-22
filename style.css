@@ -7,31 +7,63 @@
     background-color: blueviolet;
     color: white;
 }
-.butimage {
-    display: none;
-}
 
-/* Сброс стилей кнопки */
 #butimage,
 #butimage-2,
 #butimage-3,
-#butimage-4 {
-    visibility: hidden;
-    opacity: 0;
-    /* Полное удаление стилей кнопки */
-    all: unset; /* сбрасывает все наследуемые стили */ 
-    cursor: default; /* убираем указатель курсора */
-    display: inline-block; /* для правильного отображения изображения */
+#butimage-4,
+#butimage-5,
+#butimage-6,
+#butimage-7 {
+    /* Скрываем полностью, пока нет контента */
+    display: none; /* или visibility: hidden */
+    
+    /* Но оставляем возможность показываться */
+    margin: 15px auto;
+    
+    /* Убираем ВСЕ стили кнопки */
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+    box-shadow: none;
+    
+    /* Когда появится контент - покажем */
+    overflow: hidden;
+    position: relative;
+}
 
+/* Когда внутри есть изображение - показываем */
+#butimage:not(:empty),
+#butimage-2:not(:empty),
+#butimage-3:not(:empty),
+#butimage-4:not(:empty),
+#butimage-5:not(:empty),
+#butimage-6:not(:empty),
+#butimage-7:not(:empty) {
+    display: block; /* Показываем */
+    width: 300px;
+    height: 250px;
 }
 
 .form-container {
     display: flex;
-    gap: 0px;
-    padding: 0px;
+    gap: 20px; /* Нормальный отступ */
+    padding: 20px;
+    justify-content: flex-start; /* Слева */
+    align-items: flex-start; /* Выравниваем по верху */
 }
 
 .left-forms,
-.right-forms {
-    flex: 1;
+.right-forms,
+.right-forms-1 {
+       flex: 0 1 427px; /* Может сжиматься, основа 350px */
+    max-width: 950px; /* Максимальная ширина */
+    min-width: 150px; /* Минимальная ширина */
+    border: 2px solid #ddd; /* Для визуализации */
+    border-radius: 10px;
+        padding-left: 15px;
+    padding-right: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }

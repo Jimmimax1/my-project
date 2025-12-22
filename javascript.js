@@ -12,6 +12,14 @@ const butimage3 = document.getElementById('butimage-3')
 const butshow4 = document.getElementById('showBtn-4')
 const butimage4 = document.getElementById('butimage-4')
 
+const butshow5 = document.getElementById('showBtn-5')
+const butimage5 = document.getElementById('butimage-5')
+const butshow6 = document.getElementById('showBtn-6')
+const butimage6 = document.getElementById('butimage-6')
+
+const butshow7 = document.getElementById('showBtn-7')
+const butimage7 = document.getElementById('butimage-7')
+
 
 butshow.addEventListener('click', () => {
     const file = document.querySelector('input[type="file"].input1').files[0]; 
@@ -37,6 +45,24 @@ butshow3.addEventListener('click', () => {
 butshow4.addEventListener('click', () => {
     const file4 = document.querySelector('input[type="file"].input4').files[0];
     butimage4.innerHTML = `<img src="${URL.createObjectURL(file4)}" width="300" height="250" style="object-fit: contain;">`;
+}
+)
+
+butshow5.addEventListener('click', () => {
+    const file5 = document.querySelector('input[type="file"].input5').files[0];
+    butimage5.innerHTML = `<img src="${URL.createObjectURL(file5)}" width="300" height="250" style="object-fit: contain;">`;
+}
+)
+
+butshow6.addEventListener('click', () => {
+    const file6 = document.querySelector('input[type="file"].input6').files[0];
+    butimage6.innerHTML = `<img src="${URL.createObjectURL(file6)}" width="300" height="250" style="object-fit: contain;">`;
+}
+)
+
+butshow7.addEventListener('click', () => {
+    const file7 = document.querySelector('input[type="file"].input7').files[0];
+    butimage7.innerHTML = `<img src="${URL.createObjectURL(file7)}" width="300" height="250" style="object-fit: contain;">`;
 }
 )
 
