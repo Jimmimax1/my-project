@@ -56,11 +56,23 @@ butshow5.addEventListener('click', () => {
 }
 )
 
-input6.addEventListener('change', () => {
-    const file6 = document.querySelector('input[type="file"].input6').files[0];
-    butimage6.innerHTML = `<img src="${URL.createObjectURL(file6)}" width="300" height="250" style="object-fit: contain;">`;
+KEY = 'img6';
+if (localStorage.getItem(KEY)) butimage6.innerHTML = `<img src="${localStorage.getItem(KEY)}" width="300" height="250" style="object-fit: contain;">`;
+input6.onchange = () => {
+    const reader = new FileReader();
+    reader.onload = e => {
+        localStorage.setItem(KEY, e.target.result);
+        butimage6.innerHTML = `<img src="${e.target.result}" width="300" height="250" style="object-fit: contain;">`;
+    };
+    reader.readAsDataURL(input6.files[0]);
+};
+function deleteImg() {
+    localStorage.removeItem(KEY);
+    butimage6.innerHTML = '';
+    butimage6.disabled = true;
+    input6.value = '';
 }
-)
+
 // Вешаем обработчик события 'change' на input
 // Событие срабатывает когда пользователь ВЫБИРАЕТ файл
 input7.addEventListener('change', () => {
